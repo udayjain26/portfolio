@@ -3,8 +3,6 @@ import React from 'react'
 
 type Props = {}
 
-
-
 export default function About({}: Props) {
   return (
     <motion.div
@@ -15,9 +13,9 @@ export default function About({}: Props) {
             opacity:1
         }}
         transition={{
-            duration: 1.5
+            duration: 2
         }}
-        className='flex flex-col relative text-center md:text-left md:flex-row h-screen px-10 justify-evenly mx-auto items-center max-w-7xl'>
+        className='flex flex-col relative text-center md:text-left md:flex-row h-screen px-10 justify-evenly mx-auto items-center max-w-7xl scroll-smooth'>
         <h3 className='absolute top-16 mb-7 uppercase tracking-[20px] text-gray-500 text-2xl'>
             About
         </h3>

@@ -4,13 +4,14 @@ import { Inter } from '@next/font/google'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
+import Experience from '../components/Experience'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className='text-white bg-[#242424] h-screen snap-y snap-mandatory overflow-scroll z-0'>
+    <div className='text-white bg-[#242424] h-screen snap-y snap-mandatory overflow-scroll z-0 scroll-smooth'>
       <Head>
         <title>UdayJain</title>
       </Head>
@@ -24,9 +25,11 @@ export default function Home() {
       <section id='about' className='snap-center'>
         <About />
       </section>
-
-      {/* about */}
       {/* experience */}
+
+      <section className="snap-center" id="experience">
+        <Experience />
+      </section>
       {/* skills */}
       {/* projects */}
       {/* contact me */}
