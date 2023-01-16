@@ -5,7 +5,10 @@ type Props = {}
 
 export default function Card({}: Props) {
   return (
-    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center p-10 bg-[#292929]  hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden overflow-y-auto">
+    <article className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px]
+     md:w-[600px] xl:w-[900px] snap-center p-10 bg-[#292929]  hover:opacity-100
+     opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden overflow-y-auto
+     scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f76eb3]/80">
         <motion.img
 
         initial={{opacity:0, y:-100}}

@@ -7,13 +7,15 @@ import About from '../components/About'
 import Experience from '../components/Experience'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
+import Contactme from '../components/ContactMe'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className='text-white bg-[#242424] h-screen snap-y snap-mandatory overflow-scroll z-0 scroll-smooth'>
+    <div className='text-white bg-[#242424] h-screen snap-y snap-mandatory overflow-y-scroll z-0 scroll-smooth overflow-x-hidden
+    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f76eb3]/80'>
       <Head>
         <title>UdayJain</title>
       </Head>
@@ -40,7 +42,11 @@ export default function Home() {
       <section className="snap-start" id="projects">
         <Projects />
       </section>
-      {/* contact me */}
+        <Contactme/>
+      <section className="snap-start" id="contact">
+
+
+      </section>
     </div>
   )
 }

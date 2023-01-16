@@ -17,7 +17,8 @@ export default function({}: Props) {
             Experience
         </h3>
 
-        <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory relative h-4/5'>
+        <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory relative h-4/5
+        scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f76eb3]/80'>
           <Card />
           <Card /> 
           <Card />
