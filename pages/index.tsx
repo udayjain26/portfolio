@@ -8,6 +8,8 @@ import Experience from '../components/Experience'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Contactme from '../components/ContactMe'
+import Link from 'next/link'
+import { HomeIcon } from '@heroicons/react/24/solid'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -42,11 +44,18 @@ export default function Home() {
       <section className="snap-start" id="projects">
         <Projects />
       </section>
-        <Contactme/>
       <section className="snap-start" id="contact">
-
-
+        <Contactme/>
       </section>
+      <footer className="sticky bottom-5 w-full cursor-pointer">
+        <div className="flex items-center justify-center">
+        <Link href="#hero">
+          <HomeIcon className="h-6 w-6 rounded-full filter grayscale hover:grayscale-0"></HomeIcon>
+        </Link>
+        </div>
+        
+
+      </footer>
     </div>
   )
 }
