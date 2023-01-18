@@ -17,7 +17,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <div className='text-white bg-[#242424] h-screen snap-y snap-mandatory overflow-y-scroll z-0 scroll-smooth overflow-x-hidden
-    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f76eb3]/80'>
+    scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f76eb3]/80 scrollbar-rounded-[48px]'>
       <Head>
         <title>UdayJain</title>
       </Head>

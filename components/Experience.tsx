@@ -4,7 +4,7 @@ import Card from './Card'
  
 type Props = {}
 
-export default function({}: Props) {
+export default function Experience({}: Props) {
   return (
     <motion.div
         initial={{opacity:0}}

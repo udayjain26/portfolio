@@ -1,3 +1,4 @@
+import { ArrowUpOnSquareIcon } from '@heroicons/react/24/solid'
 import { motion } from 'framer-motion'
 import React from 'react'
 
@@ -40,7 +41,7 @@ export default function About({}: Props) {
 
         <div className='px-0 md:px space-y-10'>
             <h4 className='text-4xl font-semibold'>Here is a <span className="underline decoration-[#f76eb3]">little</span> background</h4>
-            <p className="text-base">I'm Uday, here is a little bit about me!</p>
+            <p className="text-base">{"I'm Uday, here is a little bit about me!"}</p>
         </div>
 
     </motion.div>
