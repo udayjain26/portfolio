@@ -1,4 +1,3 @@
-import { title } from 'process'
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
@@ -33,6 +32,9 @@ export default defineType({
       name: "profilePic",
       title: "ProfilePic",
       type: "image",
+      options: {
+        hotspot: true,
+      }
     },
     {
       name: "phoneNumber",
