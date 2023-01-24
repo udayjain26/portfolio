@@ -4,25 +4,40 @@ import { Inter } from '@next/font/google'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
-import Experience from '../components/Experience'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Contactme from '../components/ContactMe'
+import WorkExperience from '../components/WorkExperience'
 import Link from 'next/link'
 import { HomeIcon } from '@heroicons/react/24/solid'
+import { GetStaticProps } from 'next'
+import { Experience, PageInfo, Project, Skill, Social } from '../typings'
+import { fetchPageInfo } from '../utils/fetchPageInfo'
+import { fetchExperiences } from '../utils/fetchExperiences'
+import { fetchSkills } from '../utils/fetchSkills'
+import { fetchProjects } from '../utils/fetchProjects'
+import { fetchSocials } from '../utils/fetchSocials'
+
+type Props = {
+  pageInfo: PageInfo;
+  experiences: Experience[];
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+}
 
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+const Home = ({pageInfo, experiences, projects, skills, socials} : Props) => {
   return (
     <div className='text-white bg-[#242424] h-screen snap-y snap-mandatory overflow-y-scroll z-0 scroll-smooth overflow-x-hidden
     scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f76eb3]/80 scrollbar-rounded-[48px]'>
       <Head>
-        <title>UdayJain</title>
+        <title>Uday Jain</title>
       </Head>
 
-      <Header /> 
+      <Header socials={socials} /> 
 
       <section id='hero' className='snap-start'>
         <Hero />
@@ -34,7 +49,7 @@ export default function Home() {
       {/* experience */}
 
       <section className="snap-center" id="experience">
-        <Experience />
+        <WorkExperience />
       </section>
       {/* skills */}
       <section className="snap-start" id="skills">
@@ -58,4 +73,26 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async() => {
+
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocials();
+  
+  return {
+    props : {
+      pageInfo,
+      experiences,
+      skills,
+      projects,
+      socials,
+    },
+    revalidate: 30,
+  }
 }
