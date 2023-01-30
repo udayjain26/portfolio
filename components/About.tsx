@@ -1,10 +1,14 @@
 import { ArrowUpOnSquareIcon } from '@heroicons/react/24/solid'
 import { motion } from 'framer-motion'
 import React from 'react'
+import { urlFor } from '../sanity'
+import { PageInfo } from '../typings'
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo,
+}
 
-export default function About({}: Props) {
+export default function About({pageInfo}: Props) {
   return (
     <motion.div
         initial={{
@@ -20,6 +24,11 @@ export default function About({}: Props) {
         <h3 className='absolute top-16 mb-7 uppercase tracking-[20px] text-gray-500 text-2xl'>
             About
         </h3>
+        {/* <div>
+            <Image>
+                
+            </Image>
+        </div> */}
         <motion.img 
             initial = {{
                 x: -200,
@@ -33,15 +42,15 @@ export default function About({}: Props) {
                 opacity: 1,
             }}
             viewport={{once:true}}
-            src='https://i.ibb.co/yfF83LH/Screenshot-2022-12-29-at-6-03-30-PM.png'
+            src={urlFor(pageInfo?.profilePic).url()}
 
-            className='-mb-20 md:mb-20 flex-shrink-0 w-56 h-56 rounded-full
+            className='-mb-20 md:mb-20 flex-shrink-0 w-40 h-40 rounded-full
             object-cover md:rounded-lg md:w-72 md:h-80 xl:w-[300px] xl:h-[400px]'
         />
 
-        <div className='px-0 md:px space-y-10'>
+        <div className='md:px-5 xl:px-10 space-y-10'>
             <h4 className='text-4xl font-semibold'>Here is a <span className="underline decoration-[#f76eb3]">little</span> background</h4>
-            <p className="text-base">{"I'm Uday, here is a little bit about me!"}</p>
+            <p className="text-base">{pageInfo?.backgroundInformation}</p>
         </div>
 
     </motion.div>

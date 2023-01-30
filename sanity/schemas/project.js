@@ -20,7 +20,7 @@ export default defineType({
       },
     },
     {
-      name: "sumamary",
+      name: "summary",
       title: "Summary",
       type: "text",
     },
