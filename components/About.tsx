@@ -20,7 +20,8 @@ export default function About({pageInfo}: Props) {
         transition={{
             duration: 2
         }}
-        className='flex flex-col relative text-center md:text-left md:flex-row h-screen px-10 justify-evenly mx-auto items-center max-w-7xl scroll-smooth'>
+        className='flex flex-col relative text-center md:text-left md:flex-row h-screen
+                    px-10 justify-evenly mx-auto items-center max-w-7xl scroll-smooth overflow-scroll'>
         <h3 className='absolute top-16 mb-7 uppercase tracking-[20px] text-gray-500 text-2xl'>
             About
         </h3>
@@ -44,13 +45,15 @@ export default function About({pageInfo}: Props) {
             viewport={{once:true}}
             src={urlFor(pageInfo?.profilePic).url()}
 
-            className='-mb-20 md:mb-20 flex-shrink-0 w-40 h-40 rounded-full
+            className='-mb-20 md:mb-20 flex-shrink-0 w-40 h-40 rounded-full relative top-24
             object-cover md:rounded-lg md:w-72 md:h-80 xl:w-[300px] xl:h-[400px]'
         />
 
-        <div className='md:px-5 xl:px-10 space-y-10'>
-            <h4 className='text-4xl font-semibold'>Here is a <span className="underline decoration-[#f76eb3]">little</span> background</h4>
-            <p className="text-base">{pageInfo?.backgroundInformation}</p>
+        <div className='md:px-5 xl:px-10 space-y-10 overflow-hidden relative top-40 sm:relative sm:top-0 '>
+            <h4 className='sm:text-2xl text-4xl font-semibold relative top-10'>Here is a <span className="underline decoration-[#f76eb3]">little</span> background</h4>
+            <div className="overflow-scroll h-3/4">
+                <p className="text-base">{pageInfo?.backgroundInformation}</p>
+            </div>
         </div>
 
     </motion.div>
