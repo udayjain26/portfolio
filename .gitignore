@@ -40,3 +40,4 @@ next-env.d.
  
 # env
 .env.local
+.env
